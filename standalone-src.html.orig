@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#1D2F41">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#1D2F41"/>
+    <circle cx="1010" cy="150" r="240" fill="#4AA6B3" opacity="0.22"/>
+    <text x="150" y="430" font-family="Archivo, system-ui, sans-serif" font-size="190" font-weight="900" fill="#ffffff" letter-spacing="-6">éx<tspan fill="#4AA6B3">es</tspan></text>
+    <rect x="152" y="490" width="330" height="14" fill="#4AA6B3"/>
+    <text x="152" y="590" font-family="Archivo, system-ui, sans-serif" font-size="58" font-weight="700" fill="#B2B3B4">EXES11</text>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="_ds/modernist-7d073ac9-bb26-424b-a4e5-4846d57d44c5/styles.css">
+<script src="_ds/modernist-7d073ac9-bb26-424b-a4e5-4846d57d44c5/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: #F3F2F2; overflow-x: hidden; }
+  a { color: #1D2F41; }
+  a:hover { color: #4AA6B3; }
+  @keyframes exesFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes exesMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  [data-r="burger"] { display: none; }
+  @media (max-width: 1023px) {
+    [data-r="navlinks"] { display: none !important; }
+    [data-r="burger"] { display: inline-flex !important; }
+    [data-r="navcta"] { margin-left: auto; }
+  }
+  @media (max-width: 860px) {
+    [data-r="herophoto"] { min-height: 320px !important; }
+    [data-r="chart"] text { font-size: 17px; }
+    [data-r="chart"] text[data-r="chartnote"] { font-size: 15px; }
+  }
+  @media (max-width: 640px) {
+    [data-r="navcta"] { padding: 11px 15px !important; font-size: 12.5px !important; }
+    [data-r="navcta"] svg { display: none !important; }
+    [data-r="fc1"], [data-r="fc2"] { max-width: 66% !important; padding: 11px 14px !important; }
+    [data-r="fc1"] { left: 0 !important; top: 6% !important; }
+    [data-r="fc2"] { right: 0 !important; bottom: 30% !important; }
+    [data-r="fc3"] { display: none !important; }
+    [data-r="chart"] text { font-size: 20px; }
+    [data-r="chart"] text[data-r="chartnote"] { font-size: 16px; }
+  }
+  @media (max-width: 420px) {
+    [data-r="herophoto"] { min-height: 260px !important; }
+    [data-r="fc1"], [data-r="fc2"] { max-width: 78% !important; }
+  }
+
+</style>
+</helmet>
+
+<div style="--exes-accent: {{ accent }}; font-family: Archivo, system-ui, sans-serif; color: #1D2F41; background: #F3F2F2; width: 100%; max-width: 100%; padding-bottom: 1px;">
+
+  <svg width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
+    <defs>
+      <filter id="exesLiquid" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.007 0.013" numOctaves="2" seed="7" result="n"></feTurbulence>
+        <feGaussianBlur in="n" stdDeviation="2.4" result="sn"></feGaussianBlur>
+        <feDisplacementMap in="SourceGraphic" in2="sn" scale="24" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+      <filter id="exesLiquidR" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.007 0.013" numOctaves="2" seed="7" result="n"></feTurbulence>
+        <feGaussianBlur in="n" stdDeviation="2.4" result="sn"></feGaussianBlur>
+        <feDisplacementMap in="SourceGraphic" in2="sn" scale="36" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+      <filter id="exesLiquidB" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.007 0.013" numOctaves="2" seed="7" result="n"></feTurbulence>
+        <feGaussianBlur in="n" stdDeviation="2.4" result="sn"></feGaussianBlur>
+        <feDisplacementMap in="SourceGraphic" in2="sn" scale="34" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+      </filter>
+    </defs>
+  </svg>
+
+  <div style="position: sticky; top: 12px; z-index: 40; padding: 12px clamp(12px, 3vw, 28px) 0;">
+    <nav style="position: relative; max-width: 1240px; margin: 0 auto; background: linear-gradient(135deg, rgba(255,255,255,0.60), rgba(255,255,255,0.30) 46%, rgba(74,166,179,0.14)); backdrop-filter: blur(20px) saturate(180%) brightness(1.06); -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.06); border: 1px solid rgba(255,255,255,0.65); border-radius: 999px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.92), inset 0 -1px 2px rgba(255,255,255,0.45), inset 0 0 22px rgba(255,255,255,0.30), 0 14px 38px rgba(29,47,65,0.16), 0 2px 6px rgba(29,47,65,0.08); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 22px; isolation: isolate; overflow: hidden; transition: transform 260ms cubic-bezier(0.2, 0.9, 0.25, 1), box-shadow 260ms ease;" onMouseMove="{{ onGlassMove }}" onMouseLeave="{{ onGlassLeave }}" style-hover="transform: scale(1.008);" style-before="content: ''; position: absolute; inset: 0; border-radius: 999px; padding: 1px; background: linear-gradient(120deg, rgba(255,255,255,0.95), rgba(255,255,255,0) 34%, rgba(255,255,255,0) 66%, rgba(255,255,255,0.7)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; pointer-events: none; z-index: 2;" style-after="content: ''; position: absolute; left: 6%; right: 6%; top: 2px; height: 42%; border-radius: 999px; background: linear-gradient(to bottom, rgba(255,255,255,0.55), rgba(255,255,255,0)); pointer-events: none; z-index: 1;">
+      <div style="position: absolute; inset: 0; border-radius: 999px; pointer-events: none; backdrop-filter: blur(2px) url(#exesLiquid) saturate(140%); -webkit-backdrop-filter: blur(2px) saturate(140%); z-index: 0;"></div>
+      <div style="{{ glassSheen }}"></div>
+
+      <a href="#topo" style="display: flex; align-items: center; text-decoration: none; flex-shrink: 0; position: relative; z-index: 3;" aria-label="Éxes">
+        <svg width="104" height="33" viewBox="0 0 112 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.8794 8.69299C18.671 8.39067 23.2091 9.5547 25.3804 12.8727C27.1265 15.5411 27.3076 19.4559 26.687 22.4733C24.3067 22.521 21.7889 22.481 19.3999 22.4811H5.46826C5.65109 27.2159 8.88239 29.6039 13.3901 29.6061C15.7172 29.6071 17.9606 29.1212 19.7505 27.5221C20.7285 26.6483 21.1005 25.3851 22.6157 25.5104C23.0691 25.5348 23.638 25.5125 24.105 25.5172C24.8915 25.515 25.6779 25.5186 26.4644 25.5289C24.8106 30.7541 20.6624 33.4226 15.3013 33.9381C11.1801 34.3342 6.64124 33.719 3.41748 30.8864C1.40536 29.1344 0.184968 26.6449 0.0317364 23.9811C-0.419057 16.782 3.96757 10.9364 10.9575 9.22522C12.3665 8.88027 13.4237 8.78416 14.8794 8.69299ZM16.3071 13.1393C15.7535 13.066 14.9307 13.0337 14.3813 13.1002C11.6587 13.277 9.64894 14.0814 7.75928 16.151C7.10952 16.8627 6.45397 17.9691 6.17431 18.8824L13.5815 18.8854H21.6245C21.5865 15.5368 19.684 13.5869 16.3071 13.1393Z" fill="#1D2F41"></path>
+          <path d="M75.1613 8.69242C76.1678 8.65495 77.176 8.69245 78.177 8.80278C83.4284 9.35247 86.8994 12.5518 87.2141 17.8623C87.3132 19.5378 87.1651 20.8011 86.9895 22.4678C84.867 22.5276 82.5478 22.4816 80.4143 22.4815L65.757 22.4883C65.8478 27.2775 69.2794 29.624 73.7297 29.6036C76.9853 29.5885 79.4045 28.6668 81.4309 25.962C81.8857 25.3555 83.6777 25.5104 84.4113 25.5176L86.6984 25.5205C86.2913 27.1083 85.513 28.5765 84.427 29.8038C79.7326 35.1671 68.9736 35.4431 63.6701 30.876C58.6992 26.5953 59.5526 18.3098 63.6291 13.7305C66.7697 10.2024 70.5931 8.98185 75.1613 8.69242ZM74.9231 13.0801C74.8289 13.0829 74.7343 13.0898 74.6408 13.1006C70.6597 13.3645 67.9626 15.1941 66.4113 18.8809L73.759 18.8858L81.8723 18.8868C81.8276 17.2173 81.6184 16.0133 80.3342 14.7911C78.832 13.3616 76.9144 13.0277 74.9231 13.0801Z" fill="#1D2F41"></path>
+          <path d="M54.6722 8.69193C54.9603 8.6457 55.4049 8.70277 55.7033 8.72322C57.713 8.86067 59.7847 10.5579 59.5367 12.7416C59.4363 13.6111 58.9962 14.4058 58.3136 14.9531C56.9655 16.0224 54.7172 16.0445 53.4912 14.7684C53.3279 14.5983 53.1662 14.3903 53.0199 14.205C50.7149 15.9408 49.1456 18.4739 47.4339 20.8203C47.7002 21.4926 48.0337 22.1961 48.3277 22.8561C49.0586 24.4971 49.7965 26.2046 50.5622 27.821C50.7913 28.3049 51.4562 29.5592 51.9147 29.6478C53.1836 29.8931 54.2314 26.5014 54.4422 25.789C55.1087 26.0413 56.9808 26.3119 57.2165 26.9722C57.4712 27.6856 56.7396 29.2496 56.4219 29.9399C55.7093 31.4872 54.5038 33.0071 52.8392 33.5638C51.5409 33.9978 49.822 33.9533 48.58 33.3425C46.442 32.2912 45.5213 29.9024 44.6985 27.8218C44.3831 27.0243 44.013 26.1881 43.732 25.3858C41.7032 28.0102 40.6354 30.4807 37.7204 32.4905C35.4037 34.1012 31.192 34.6535 29.341 32.0956C28.8064 31.3612 28.5923 30.4413 28.7478 29.5463C29.1206 27.312 31.9176 26.0874 33.8608 27.1794C34.4882 27.5319 34.8096 27.8847 35.2195 28.4652C37.2061 27.2812 39.9235 23.288 41.4001 21.3053C40.2881 18.8 39.2341 16.0863 38.0801 13.6251L32.8161 13.6239C33.2859 12.1721 33.5484 10.3867 34.2356 9.06113C34.4727 8.60382 36.9184 8.72236 37.4299 8.72273L42.0153 8.72622C42.8802 10.8592 43.65 13.0448 44.5019 15.1843C44.71 15.7068 44.8838 16.2221 45.1375 16.727C47.4254 13.1916 50.1084 9.11439 54.6722 8.69193Z" fill="#4AA6B3"></path>
+          <path d="M102.546 8.69331C102.953 8.67286 103.36 8.67078 103.766 8.68725C106.153 8.77119 108.64 9.28225 110.321 11.1214C111.899 12.8477 112.062 14.6544 111.984 16.8301C110.808 16.8354 109.61 16.8629 108.428 16.8447C106.751 16.8572 107.093 15.1193 106.209 14.2264C104.591 12.5907 100.327 12.8448 98.6691 14.3001C97.6932 15.1566 97.3718 17.1232 98.6397 17.8798C102.975 20.4684 113.076 19.7763 111.654 27.3912C110.56 33.2504 104.43 34.1836 99.5274 34.0063C96.4933 33.7489 93.5162 32.9268 91.6123 30.3291C90.6089 28.9598 90.121 27.2108 90.3891 25.5213C91.2731 25.5148 95.0939 25.2282 95.4024 26.0497C96.6384 29.3379 99.2543 29.7933 102.405 29.6027C104.599 29.4699 106.309 28.4883 106.255 26.0766C106.063 23.7749 101.92 23.56 100.187 23.0353C97.8426 22.3251 95.2151 21.7707 93.4721 19.9306C91.4941 17.8421 92.1259 14.1453 93.9325 12.1699C96.205 9.65763 99.2831 8.91863 102.546 8.69331Z" fill="#1D2F41"></path>
+          <path d="M20.1264 0C21.0276 0.0408811 21.7618 0.170835 22.4177 0.854217C22.9034 1.35522 23.1653 2.03168 23.1436 2.72917C23.1235 3.46554 22.8084 4.16304 22.2693 4.66503C20.9663 5.86893 18.7392 5.56262 17.0831 5.50311L12.1581 5.30657L8.74246 5.15724C8.70572 4.8159 8.67193 4.47419 8.64114 4.13224C8.56235 3.18837 8.66752 2.92601 9.61459 2.64963C10.9906 2.30438 12.4257 1.80954 13.8043 1.50591C15.7714 1.07265 18.1334 0.117874 20.1264 0Z" fill="#1D2F41"></path>
+        </svg>
+      </a>
+      <div data-r="navlinks" style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: center; gap: 2px; flex: 1 1 auto; min-width: 0; overflow: hidden; position: relative; z-index: 3;">
+        <a href="#tese" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">A tese</a>
+        <a href="#numeros" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Números</a>
+        <a href="#projecao" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Projeção</a>
+        <a href="#gestora" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Gestora</a>
+        <a href="#faq" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Riscos</a>
+      </div>
+      <button type="button" data-r="burger" onClick="{{ toggleMenu }}" aria-label="Abrir menu" style="align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 999px; background: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.6); color: #1D2F41; cursor: pointer; flex-shrink: 0; position: relative; z-index: 3; margin-left: auto;" style-hover="background: rgba(255,255,255,0.7);">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+      </button>
+      <a href="#" data-r="navcta" style="display: inline-flex; align-items: center; gap: 8px; background: var(--exes-accent, #4AA6B3); color: #10222f; font-size: 13.5px; font-weight: 800; padding: 12px 20px; border-radius: 999px; text-decoration: none; box-shadow: 0 8px 20px rgba(74,166,179,0.35); flex-shrink: 0; white-space: nowrap; position: relative; z-index: 3;" style-hover="background: #3d8f9b;">{{ ctaLabel }}
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
+      </a>
+    </nav>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width: 1240px; margin: 8px auto 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%); border: 1px solid rgba(255,255,255,0.65); border-radius: 24px; box-shadow: 0 18px 44px rgba(29,47,65,0.18); padding: 12px; display: grid; gap: 4px;">
+        <a href="#tese" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">A tese</a>
+        <a href="#numeros" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Números</a>
+        <a href="#projecao" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Projeção</a>
+        <a href="#gestora" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Gestora</a>
+        <a href="#cronograma" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Cronograma</a>
+        <a href="#faq" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Riscos</a>
+        <a href="#documentos" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Documentos da oferta</a>
+      </div>
+    </sc-if>
+  </div>
+
+  <section id="topo" data-screen-label="01 Hero" style="padding: clamp(16px, 2.5vw, 28px) clamp(12px, 3vw, 28px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; background: #1D2F41; border-radius: clamp(24px, 3vw, 40px); overflow: hidden; color: #ffffff; box-shadow: 0 30px 70px rgba(29,47,65,0.28); position: relative;">
+      <div style="position: absolute; top: -140px; right: -120px; width: 460px; height: 460px; border-radius: 999px; background: radial-gradient(circle, rgba(74,166,179,0.30), rgba(74,166,179,0) 70%); pointer-events: none;"></div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(28px, 4vw, 56px); align-items: center; padding: clamp(32px, 5vw, 72px) clamp(24px, 4vw, 60px) 0;">
+        <div style="min-width: 0; position: relative;">
+          <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.08); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 8px 16px 8px 12px; margin-bottom: 24px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 999px; background: var(--exes-accent, #4AA6B3); color: #10222f;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+            </span>
+            <span style="font-size: 12.5px; font-weight: 700; color: #ffffff;">2º lugar entre 87 FIIs de recebíveis · jun/2026</span>
+          </div>
+          <h1 style="font-size: clamp(34px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 900; margin: 0 0 20px; text-wrap: pretty;">Um dos FIIs com maior DY patrimonial da bolsa está em oferta, <span style="color: var(--exes-accent, #4AA6B3);">com desconto</span></h1>
+          <p style="font-size: clamp(15.5px, 1.3vw, 18px); line-height: 1.6; color: #B2B3B4; max-width: 48ch; margin: 0 0 30px;">O EXES11 ocupa o 2º lugar em rendimento patrimonial entre 87 fundos de recebíveis, e agora você pode entrar pagando menos do que a cota vale.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+            <a href="#" style="display: inline-flex; align-items: center; gap: 10px; background: var(--exes-accent, #4AA6B3); color: #10222f; font-size: 15px; font-weight: 800; padding: 17px 26px; border-radius: 999px; text-decoration: none; box-shadow: 0 14px 32px rgba(74,166,179,0.38);" style-hover="background: #3d8f9b;">{{ ctaLabel }}
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+          <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 24px 0 0; max-width: 54ch;">A rentabilidade passada não representa garantia de rentabilidade futura. Este documento é um material publicitário e contém apenas um resumo das informações constantes dos documentos da Oferta, com os quais não se confunde.</p>
+        </div>
+
+        <div data-r="herophoto" style="position: relative; min-width: 0; min-height: clamp(330px, 40vw, 470px);">
+          <div style="position: absolute; inset: 0; border-radius: clamp(20px, 2.4vw, 32px); overflow: hidden; border: 1px solid rgba(255,255,255,0.14);">
+            <img src="assets/hero.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+          </div>
+          <div data-r="fc1" style="position: absolute; left: -14px; top: 10%; background: rgba(22,40,58,0.94); backdrop-filter: blur(8px); border: 1px solid rgba(74,166,179,0.45); border-radius: 18px; padding: 14px 18px; max-width: 232px; box-shadow: 0 20px 44px rgba(0,0,0,0.45); animation: exesFloat 7s ease-in-out infinite;">
+            <div style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--exes-accent, #4AA6B3); font-weight: 800; margin-bottom: 4px;">Rendimento mensal</div>
+            <div style="font-size: 22px; font-weight: 900; letter-spacing: -0.02em; color: #ffffff;">R$ 0,13 / cota</div>
+            <div style="font-size: 11px; color: #B2B3B4; margin-top: 3px;">19 meses consecutivos no mesmo patamar</div>
+          </div>
+          <div data-r="fc2" style="position: absolute; right: -12px; bottom: 26%; background: rgba(22,40,58,0.94); backdrop-filter: blur(8px); border: 1px solid rgba(74,166,179,0.45); border-radius: 18px; padding: 14px 18px; max-width: 216px; box-shadow: 0 20px 44px rgba(0,0,0,0.45); animation: exesFloat 8.6s ease-in-out infinite 1.2s;">
+            <div style="font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--exes-accent, #4AA6B3); font-weight: 800; margin-bottom: 4px;">DY patrimonial 12m</div>
+            <div style="font-size: 22px; font-weight: 900; letter-spacing: -0.02em; color: #ffffff;">15,92%</div>
+            <div style="font-size: 11px; color: #B2B3B4; margin-top: 3px;">Data-base: jun/2026</div>
+          </div>
+          <div data-r="fc3" style="position: absolute; left: 10%; bottom: -10px; background: var(--exes-accent, #4AA6B3); color: #10222f; border-radius: 16px; padding: 12px 16px; max-width: 208px; box-shadow: 0 20px 44px rgba(0,0,0,0.4); animation: exesFloat 6.4s ease-in-out infinite 0.6s;">
+            <div style="font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800;">Pessoa física</div>
+            <div style="font-size: 15px; font-weight: 800; line-height: 1.3; margin-top: 3px;">Rendimentos mensais isentos de IR</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 60px) clamp(24px, 3vw, 40px);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px;">
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 20px;">
+            <div style="font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: var(--exes-accent, #4AA6B3);">15,92%</div>
+            <p style="font-size: 12.5px; line-height: 1.45; color: #B2B3B4; margin: 8px 0 0;">DY patrimonial 12 meses (jun/2026)</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 20px;">
+            <div style="font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1;">72%</div>
+            <p style="font-size: 12.5px; line-height: 1.45; color: #B2B3B4; margin: 8px 0 0;">da carteira estruturada pela própria Éxes</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 20px;">
+            <div style="font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1;">52%</div>
+            <p style="font-size: 12.5px; line-height: 1.45; color: #B2B3B4; margin: 8px 0 0;">LTV médio ponderado com garantia real</p>
+          </div>
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 20px;">
+            <div style="font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1;">Isento</div>
+            <p style="font-size: 12.5px; line-height: 1.45; color: #B2B3B4; margin: 8px 0 0;">de IR nos rendimentos mensais para pessoa física</p>
+          </div>
+        </div>
+        <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 18px 0 0;">Fonte do ranking e do DY patrimonial: Comdinheiro, universo de 87 FIIs de recebíveis, data-base junho/2026; apuração da Éxes Gestora de Recursos. A rentabilidade passada não representa garantia de rentabilidade futura.</p>
+      </div>
+    </div>
+  </section>
+
+  <div style="overflow: hidden; padding: clamp(24px, 3vw, 40px) 0; border-bottom: 1px solid rgba(29,47,65,0.10);">
+    <div style="display: flex; width: max-content; animation: exesMarquee 34s linear infinite;">
+      <div style="display: flex; align-items: center; gap: 28px; padding-right: 28px; font-size: 13.5px; font-weight: 700; color: #374D61; white-space: nowrap;">
+        <span>Crédito imobiliário estruturado</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>19 operações na carteira</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>Garantias reais</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>Monitoramento independente</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>13 meses seguidos no Top 10</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>R$ 136,5 mi de patrimônio líquido</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>Rendimentos isentos de IR para PF</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 28px; padding-right: 28px; font-size: 13.5px; font-weight: 700; color: #374D61; white-space: nowrap;" aria-hidden="true">
+        <span>Crédito imobiliário estruturado</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>19 operações na carteira</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>Garantias reais</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>Monitoramento independente</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>13 meses seguidos no Top 10</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>R$ 136,5 mi de patrimônio líquido</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>Rendimentos isentos de IR para PF</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="tese" data-screen-label="02 Tese" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="max-width: 62ch; margin-bottom: clamp(28px, 3vw, 44px);">
+        <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 18px;">A tese do fundo</span>
+        <h2 style="font-size: clamp(28px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.03em; font-weight: 900; margin: 0 0 16px; text-wrap: pretty;">Crédito imobiliário estruturado, com garantia real e originação própria</h2>
+        <p style="font-size: 16px; line-height: 1.65; color: #374D61; margin: 0;">O EXES11 investe majoritariamente em crédito imobiliário estruturado (CRIs), com garantias reais e monitoramento independente. A carteira é majoritariamente originada e estruturada pela própria gestora, o que dá mais controle sobre os termos de cada operação.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 24px; padding: 26px; box-shadow: 0 8px 24px rgba(29,47,65,0.06);">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 14px; background: rgba(74,166,179,0.16); color: #1D2F41; margin-bottom: 18px;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </span>
+          <h3 style="font-size: 18px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px;">Originação própria</h3>
+          <p style="font-size: 14px; line-height: 1.55; color: #585858; margin: 0 0 14px;">72% da carteira de crédito é estruturada pela própria Éxes, com controle sobre os termos de cada operação.</p>
+          <div style="font-size: 26px; font-weight: 900; letter-spacing: -0.03em; color: var(--exes-accent, #4AA6B3);">72%</div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 24px; padding: 26px; box-shadow: 0 8px 24px rgba(29,47,65,0.06);">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 14px; background: rgba(74,166,179,0.16); color: #1D2F41; margin-bottom: 18px;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+          </span>
+          <h3 style="font-size: 18px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px;">Cobertura de garantias</h3>
+          <p style="font-size: 14px; line-height: 1.55; color: #585858; margin: 0 0 14px;">LTV médio ponderado das operações com garantia real, conforme o Estudo de Viabilidade.</p>
+          <div style="font-size: 26px; font-weight: 900; letter-spacing: -0.03em; color: var(--exes-accent, #4AA6B3);">52%</div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 24px; padding: 26px; box-shadow: 0 8px 24px rgba(29,47,65,0.06);">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 14px; background: rgba(74,166,179,0.16); color: #1D2F41; margin-bottom: 18px;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 15h3v3H7zM12 10h3v8h-3zM17 6h3v12h-3z"></path></svg>
+          </span>
+          <h3 style="font-size: 18px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px;">Distribuição estável</h3>
+          <p style="font-size: 14px; line-height: 1.55; color: #585858; margin: 0 0 14px;">19 meses consecutivos de distribuição no mesmo patamar, de R$ 0,13 por cota.</p>
+          <div style="font-size: 26px; font-weight: 900; letter-spacing: -0.03em; color: var(--exes-accent, #4AA6B3);">R$ 0,13</div>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 24px; padding: 26px; box-shadow: 0 8px 24px rgba(29,47,65,0.06);">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 14px; background: rgba(74,166,179,0.16); color: #1D2F41; margin-bottom: 18px;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+          </span>
+          <h3 style="font-size: 18px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px;">Histórico na bolsa</h3>
+          <p style="font-size: 14px; line-height: 1.55; color: #585858; margin: 0 0 14px;">O fundo está prestes a completar cinco anos de negociação na B3.</p>
+          <div style="font-size: 26px; font-weight: 900; letter-spacing: -0.03em; color: var(--exes-accent, #4AA6B3);">5 anos</div>
+        </div>
+      </div>
+      <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 22px 0 0;">Fonte: Éxes Gestora de Recursos — “A tese de investimento em quatro pilares” e “O EXES11 em números”, data-base 31/07/2026. A rentabilidade passada não representa garantia de rentabilidade futura.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="03 Gráficos" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
+      <figure style="margin: 0; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 28px; padding: clamp(22px, 3vw, 32px); box-shadow: 0 8px 24px rgba(29,47,65,0.06); min-width: 0;">
+        <h3 style="font-size: 19px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 4px;">Histórico de distribuição</h3>
+        <p style="font-size: 13px; color: #585858; margin: 0 0 20px;">Rendimento distribuído por cota, últimos 19 meses (R$)</p>
+        <svg data-r="chart" viewBox="0 0 600 190" style="width: 100%; height: auto; display: block;" role="img" aria-label="Distribuição mensal de R$ 0,13 por cota em 19 meses consecutivos">
+          <line x1="10" y1="160" x2="590" y2="160" stroke="#1D2F41" stroke-width="1.5"></line>
+          <line x1="10" y1="50" x2="590" y2="50" stroke="#B2B3B4" stroke-width="1" stroke-dasharray="4 4"></line>
+          <text x="14" y="42" font-family="Archivo" font-size="12" font-weight="700" fill="#1D2F41">R$ 0,13</text>
+          <rect x="16" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="46" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="76" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="106" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="136" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="166" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="196" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="226" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="256" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="286" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="316" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="346" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="376" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="406" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="436" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="466" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="496" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="526" y="50" width="20" height="110" rx="6" fill="#4AA6B3"></rect>
+          <rect x="556" y="50" width="20" height="110" rx="6" fill="#1D2F41"></rect>
+          <text x="16" y="180" font-family="Archivo" font-size="11" fill="#585858">jan/2025</text>
+          <text x="286" y="180" font-family="Archivo" font-size="11" fill="#585858">out/2025</text>
+          <text x="520" y="180" font-family="Archivo" font-size="11" fill="#585858">jul/2026</text>
+        </svg>
+        <figcaption style="font-size: 11px; line-height: 1.6; color: #787D81; margin-top: 16px;">Fonte: BTG Pactual Serviços Financeiros S.A. DTVM, DRE gerencial em regime de caixa; apuração da Éxes Gestora de Recursos. A rentabilidade passada não representa garantia de rentabilidade futura.</figcaption>
+      </figure>
+
+      <figure style="margin: 0; background: #1D2F41; color: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 28px; padding: clamp(22px, 3vw, 32px); box-shadow: 0 18px 40px rgba(29,47,65,0.18); min-width: 0;">
+        <h3 style="font-size: 19px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 4px; color: #ffffff;">Retorno total acumulado</h3>
+        <p style="font-size: 13px; color: #B2B3B4; margin: 0 0 20px;">EXES11 x IFIX x IPCA — base 100, jun/2022 a jul/2026</p>
+        <svg data-r="chart" viewBox="0 0 600 250" style="width: 100%; height: auto; display: block;" role="img" aria-label="Retorno acumulado: EXES11 mais 61,6 por cento, IFIX mais 33,0 por cento, IPCA mais 18,6 por cento">
+          <line x1="40" y1="197.5" x2="590" y2="197.5" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"></line>
+          <line x1="40" y1="120" x2="590" y2="120" stroke="rgba(255,255,255,0.12)" stroke-width="1"></line>
+          <line x1="40" y1="60" x2="590" y2="60" stroke="rgba(255,255,255,0.12)" stroke-width="1"></line>
+          <text x="8" y="201" font-family="Archivo" font-size="11" fill="#B2B3B4">100</text>
+          <polyline points="40,197.5 175,166 310,136.75 445,100.75 580,59.1" fill="none" stroke="#4AA6B3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <polyline points="40,197.5 175,188.5 310,170.5 445,148 580,123.25" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          <polyline points="40,197.5 175,186.25 310,177.25 445,166 580,155.7" fill="none" stroke="#787D81" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round"></polyline>
+          <circle cx="580" cy="59.1" r="4.5" fill="#4AA6B3"></circle>
+          <text x="446" y="48" font-family="Archivo" font-size="13" font-weight="800" fill="#4AA6B3">EXES11 +61,6%</text>
+          <text x="452" y="115" font-family="Archivo" font-size="12" font-weight="700" fill="#ffffff">IFIX +33,0%</text>
+          <text x="452" y="150" font-family="Archivo" font-size="12" font-weight="700" fill="#B2B3B4">IPCA +18,6%</text>
+          <text x="40" y="220" font-family="Archivo" font-size="11" fill="#B2B3B4">jun/22</text>
+          <text x="290" y="220" font-family="Archivo" font-size="11" fill="#B2B3B4">2024</text>
+          <text x="552" y="220" font-family="Archivo" font-size="11" fill="#B2B3B4">jul/26</text>
+          <text data-r="chartnote" x="40" y="242" font-family="Archivo" font-size="10" fill="#787D81">Curvas ilustrativas; pontos inicial e final conforme dados apurados.</text>
+        </svg>
+        <figcaption style="font-size: 11px; line-height: 1.6; color: #787D81; margin-top: 16px;">Fonte: Éxes, Mais Retorno e B3. A rentabilidade passada não representa garantia de rentabilidade futura. A rentabilidade divulgada não é líquida de impostos, excetuados os rendimentos distribuídos para pessoas físicas.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="numeros" data-screen-label="04 Carteira" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="max-width: 60ch; margin-bottom: clamp(28px, 3vw, 44px);">
+        <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 18px;">A carteira em números</span>
+        <h2 style="font-size: clamp(28px, 3.2vw, 44px); line-height: 1.07; letter-spacing: -0.03em; font-weight: 900; margin: 0 0 14px;">Concentração baixa e cobertura de garantias</h2>
+        <p style="font-size: 16px; line-height: 1.65; color: #374D61; margin: 0;">A carteira é pulverizada em 19 operações, com exposição máxima controlada e diversificação entre setores.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-bottom: 16px;">
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 22px; padding: 24px;">
+          <div style="font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1;">19</div>
+          <p style="font-size: 13px; color: #585858; margin: 8px 0 0;">operações na carteira</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 22px; padding: 24px;">
+          <div style="font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1;">R$ 136,5 mi</div>
+          <p style="font-size: 13px; color: #585858; margin: 8px 0 0;">de patrimônio líquido</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 22px; padding: 24px;">
+          <div style="font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1;">7,15%</div>
+          <p style="font-size: 13px; color: #585858; margin: 8px 0 0;">maior exposição de crédito em relação ao patrimônio</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 22px; padding: 24px;">
+          <div style="font-size: clamp(26px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; color: var(--exes-accent, #4AA6B3);">52%</div>
+          <p style="font-size: 13px; color: #585858; margin: 8px 0 0;">LTV médio ponderado com garantia real</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+        <div style="background: rgba(74,166,179,0.10); border: 2px dashed rgba(74,166,179,0.6); border-radius: 24px; padding: 28px; min-height: 210px; display: flex; flex-direction: column; justify-content: center; gap: 8px; min-width: 0;">
+          <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #2f7f8a;">Gráfico a inserir</span>
+          <p style="font-size: 15px; line-height: 1.5; color: #374D61; margin: 0;">Concentração por operação (% do PL) e LTV por operação (%) — slide “Concentração e cobertura de garantias”.</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 24px; padding: 28px; min-width: 0;">
+          <h3 style="font-size: 17px; font-weight: 800; margin: 0 0 16px;">Diversificação setorial</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="font-size: 13px; font-weight: 600; color: #1D2F41; background: #F3F2F2; border-radius: 999px; padding: 9px 15px;">Incorporação residencial</span>
+            <span style="font-size: 13px; font-weight: 600; color: #1D2F41; background: #F3F2F2; border-radius: 999px; padding: 9px 15px;">Educacional</span>
+            <span style="font-size: 13px; font-weight: 600; color: #1D2F41; background: #F3F2F2; border-radius: 999px; padding: 9px 15px;">Varejo essencial</span>
+            <span style="font-size: 13px; font-weight: 600; color: #1D2F41; background: #F3F2F2; border-radius: 999px; padding: 9px 15px;">Lajes comerciais</span>
+            <span style="font-size: 13px; font-weight: 600; color: #1D2F41; background: #F3F2F2; border-radius: 999px; padding: 9px 15px;">Energia</span>
+            <span style="font-size: 13px; font-weight: 600; color: #585858; border: 1px solid rgba(29,47,65,0.16); border-radius: 999px; padding: 9px 15px;">entre outros</span>
+          </div>
+          <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 20px 0 0;">Fonte: Éxes Gestora de Recursos — “O EXES11 em números” e “Diversificação setorial”, data-base 31/07/2026.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="05 Carteira detida" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 28px; padding: clamp(26px, 4vw, 44px); box-shadow: 0 8px 24px rgba(29,47,65,0.06);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(24px, 3vw, 40px); align-items: center;">
+        <div style="min-width: 0;">
+          <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 16px;">Carteira detida</span>
+          <h2 style="font-size: clamp(22px, 2.4vw, 32px); line-height: 1.12; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 12px;">Empresas que o EXES11 ajuda a financiar</h2>
+          <p style="font-size: 15px; line-height: 1.6; color: #374D61; margin: 0;">O EXES11 investe em operações de crédito imobiliário que contam com garantias e coobrigações das seguintes empresas:</p>
+        </div>
+        <div style="min-width: 0; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);">
+          <div style="display: flex; width: max-content; animation: exesMarquee 26s linear infinite;" style-hover="animation-play-state: paused;">
+            <div style="display: flex; gap: 36px; padding-right: 36px; align-items: center;">
+              <div style="background: transparent; height: 72px; width: 176px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-sizing: border-box; filter: grayscale(1) contrast(1.04) brightness(0.48); opacity: 0.92;">
+                <img src="assets/logo-cyrela.png" alt="Cyrela" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+              </div>
+              <div style="background: transparent; height: 72px; width: 176px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-sizing: border-box; filter: grayscale(1) contrast(1.04) brightness(0.48); opacity: 0.92;">
+                <img src="assets/logo-sao-carlos.png" alt="São Carlos" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+              </div>
+              <div style="background: transparent; height: 72px; width: 176px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-sizing: border-box; filter: grayscale(1) contrast(1.04) brightness(0.48); opacity: 0.92;">
+                <img src="assets/logo-anima.png" alt="Ânima" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+              </div>
+            </div>
+            <div style="display: flex; gap: 36px; padding-right: 36px; align-items: center;" aria-hidden="true">
+              <div style="background: transparent; height: 72px; width: 176px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-sizing: border-box; filter: grayscale(1) contrast(1.04) brightness(0.48); opacity: 0.92;">
+                <img src="assets/logo-cyrela.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+              </div>
+              <div style="background: transparent; height: 72px; width: 176px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-sizing: border-box; filter: grayscale(1) contrast(1.04) brightness(0.48); opacity: 0.92;">
+                <img src="assets/logo-sao-carlos.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+              </div>
+              <div style="background: transparent; height: 72px; width: 176px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-sizing: border-box; filter: grayscale(1) contrast(1.04) brightness(0.48); opacity: 0.92;">
+                <img src="assets/logo-anima.png" alt="" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 22px 0 0;">Fonte: Éxes Gestora de Recursos — “Carteira detida”, data-base 31/07/2026. Substituir os rótulos pelos logotipos aprovados. A menção às empresas se refere exclusivamente às garantias e coobrigações das operações e não implica sua participação na Oferta.</p>
+    </div>
+  </section>
+
+  <section id="projecao" data-screen-label="06 Projeção" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="max-width: 62ch; margin-bottom: clamp(24px, 3vw, 36px);">
+        <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 18px;">Estudo de viabilidade</span>
+        <h2 style="font-size: clamp(28px, 3.2vw, 44px); line-height: 1.07; letter-spacing: -0.03em; font-weight: 900; margin: 0 0 14px;">Projeção para os próximos 5 anos</h2>
+        <p style="font-size: 16px; line-height: 1.65; color: #374D61; margin: 0;">A gestora elaborou, no Estudo de Viabilidade, uma projeção de rentabilidade para os próximos 5 anos do EXES11, considerando a carteira atual, sem depender de captação de recursos novos.</p>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 28px; overflow: hidden; box-shadow: 0 8px 24px rgba(29,47,65,0.06);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <div style="padding: clamp(24px, 3vw, 36px); border-right: 1px solid rgba(29,47,65,0.08); min-width: 0;">
+            <h3 style="font-size: 17px; font-weight: 800; margin: 0 0 16px;">Escolha o cenário</h3>
+            <div style="display: flex; gap: 6px; background: #F3F2F2; border-radius: 999px; padding: 5px; margin-bottom: 24px;">
+              <button type="button" onClick="{{ pickBase }}" style="{{ baseTabStyle }}">Cenário base</button>
+              <button type="button" onClick="{{ pickCons }}" style="{{ consTabStyle }}">Conservador</button>
+            </div>
+            <p style="font-size: 14px; line-height: 1.6; color: #585858; margin: 0 0 20px;">{{ scenarioNote }}</p>
+            <div style="background: rgba(74,166,179,0.10); border: 2px dashed rgba(74,166,179,0.6); border-radius: 20px; padding: 20px;">
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #2f7f8a;">Gráfico a inserir</span>
+              <p style="font-size: 14px; line-height: 1.5; color: #374D61; margin: 6px 0 0;">Yield em percentual do CDI, Ano 1 a Ano 5 — slides “Estudo de viabilidade” e “Estudo de viabilidade — cenário conservador”.</p>
+            </div>
+          </div>
+          <div style="padding: clamp(24px, 3vw, 36px); background: #1D2F41; color: #ffffff; min-width: 0;">
+            <h3 style="font-size: 17px; font-weight: 800; margin: 0 0 20px; color: #ffffff;">Resultado projetado</h3>
+            <div style="display: grid; gap: 16px;">
+              <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 22px;">
+                <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--exes-accent, #4AA6B3); margin-bottom: 8px;">{{ metricALabel }}</div>
+                <div style="font-size: clamp(28px, 2.8vw, 38px); font-weight: 900; letter-spacing: -0.03em; line-height: 1;">{{ metricAValue }}</div>
+                <p style="font-size: 13px; color: #B2B3B4; margin: 8px 0 0;">{{ metricANote }}</p>
+              </div>
+              <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 22px;">
+                <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--exes-accent, #4AA6B3); margin-bottom: 8px;">{{ metricBLabel }}</div>
+                <div style="font-size: clamp(28px, 2.8vw, 38px); font-weight: 900; letter-spacing: -0.03em; line-height: 1;">{{ metricBValue }}</div>
+                <p style="font-size: 13px; color: #B2B3B4; margin: 8px 0 0;">{{ metricBNote }}</p>
+              </div>
+            </div>
+            <a href="#" style="display: inline-flex; align-items: center; gap: 10px; background: var(--exes-accent, #4AA6B3); color: #10222f; font-size: 14.5px; font-weight: 800; padding: 15px 22px; border-radius: 999px; text-decoration: none; margin-top: 20px;" style-hover="background: #3d8f9b;">{{ ctaLabel }}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div style="background: #16283A; color: #ffffff; padding: 22px clamp(24px, 3vw, 36px);">
+          <p style="font-size: 12.5px; font-weight: 800; letter-spacing: 0.02em; line-height: 1.5; margin: 0 0 8px;">AS INFORMAÇÕES PRESENTES NESTE MATERIAL SÃO BASEADAS EM SIMULAÇÕES E OS RESULTADOS REAIS PODERÃO SER SIGNIFICATIVAMENTE DIFERENTES.</p>
+          <p style="font-size: 11.5px; line-height: 1.65; color: #B2B3B4; margin: 0;">Projeção elaborada pela própria gestora com base em simulações; não constitui promessa nem garantia de rentabilidade futura. A rentabilidade passada não representa garantia de rentabilidade futura. A rentabilidade divulgada não é líquida de impostos, excetuados os rendimentos distribuídos para pessoas físicas. Fonte: Éxes Gestora de Recursos — “Estudo de viabilidade” e “Estudo de viabilidade — cenário conservador”.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gestora" data-screen-label="07 Gestora" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(24px, 3vw, 44px); align-items: center;">
+      <div style="min-width: 0; position: relative; min-height: clamp(300px, 34vw, 440px);">
+        <div style="position: absolute; inset: 0; border-radius: 28px; overflow: hidden; border: 1px solid rgba(29,47,65,0.10);">
+          <img src="assets/gestora.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </div>
+        <div style="position: absolute; right: -10px; bottom: -14px; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 20px; padding: 16px 20px; box-shadow: 0 18px 40px rgba(29,47,65,0.16);">
+          <div style="font-size: 24px; font-weight: 900; letter-spacing: -0.03em; color: var(--exes-accent, #4AA6B3); line-height: 1;">R$ 2 bi+</div>
+          <p style="font-size: 12px; color: #585858; margin: 6px 0 0;">em ativos sob gestão</p>
+        </div>
+      </div>
+      <div style="min-width: 0;">
+        <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 18px;">A gestora</span>
+        <h2 style="font-size: clamp(26px, 3vw, 42px); line-height: 1.07; letter-spacing: -0.03em; font-weight: 900; margin: 0 0 16px;">Quem é a Éxes Gestora de Recursos</h2>
+        <p style="font-size: 16px; line-height: 1.65; color: #374D61; margin: 0 0 24px; max-width: 54ch;">O EXES11 é gerido pela Éxes Gestora de Recursos, especializada em fundos de crédito privado, fundada por profissionais com mais de 20 anos de mercado financeiro e de capitais brasileiro.</p>
+        <div style="display: grid; gap: 12px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 18px; padding: 16px 18px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 999px; background: rgba(74,166,179,0.18); color: #2f7f8a; flex-shrink: 0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+            </span>
+            <p style="font-size: 14.5px; line-height: 1.5; margin: 0; color: #1D2F41;">23 fundos de investimento sob gestão</p>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 18px; padding: 16px 18px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 999px; background: rgba(74,166,179,0.18); color: #2f7f8a; flex-shrink: 0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+            </span>
+            <p style="font-size: 14.5px; line-height: 1.5; margin: 0; color: #1D2F41;">Mais de R$ 2 bilhões em ativos sob gestão (AuM)</p>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 18px; padding: 16px 18px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 999px; background: rgba(74,166,179,0.18); color: #2f7f8a; flex-shrink: 0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+            </span>
+            <p style="font-size: 14.5px; line-height: 1.5; margin: 0; color: #1D2F41;">Mais de 20 anos de experiência individual da equipe fundadora</p>
+          </div>
+        </div>
+        <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 18px 0 0;">Fonte: Éxes Gestora de Recursos — “Somos uma GESTORA de fundos de investimentos de crédito privado”, data-base junho/2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cronograma" data-screen-label="08 Cronograma" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="max-width: 56ch; margin-bottom: clamp(24px, 3vw, 36px);">
+        <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 18px;">Cronograma indicativo</span>
+        <h2 style="font-size: clamp(28px, 3.2vw, 44px); line-height: 1.07; letter-spacing: -0.03em; font-weight: 900; margin: 0;">Cronograma da oferta</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 20px; padding: 22px;">
+          <div style="font-size: 17px; font-weight: 900; letter-spacing: -0.01em;">27/08/2026</div>
+          <p style="font-size: 13px; color: #585858; margin: 6px 0 0;">Aviso ao Mercado</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 20px; padding: 22px;">
+          <div style="font-size: 17px; font-weight: 900; letter-spacing: -0.01em;">02/09/2026</div>
+          <p style="font-size: 13px; color: #585858; margin: 6px 0 0;">Registro automático na CVM</p>
+        </div>
+        <div style="background: var(--exes-accent, #4AA6B3); border: 1px solid rgba(74,166,179,0.6); border-radius: 20px; padding: 22px;">
+          <div style="font-size: 17px; font-weight: 900; letter-spacing: -0.01em; color: #10222f;">04/09/2026</div>
+          <p style="font-size: 13px; color: #10222f; margin: 6px 0 0; opacity: 0.8;">Início do Período de Aquisição</p>
+        </div>
+        <div style="background: var(--exes-accent, #4AA6B3); border: 1px solid rgba(74,166,179,0.6); border-radius: 20px; padding: 22px;">
+          <div style="font-size: 17px; font-weight: 900; letter-spacing: -0.01em; color: #10222f;">16/09/2026</div>
+          <p style="font-size: 13px; color: #10222f; margin: 6px 0 0; opacity: 0.8;">Encerramento do Período de Aquisição</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 20px; padding: 22px;">
+          <div style="font-size: 17px; font-weight: 900; letter-spacing: -0.01em;">17/09/2026</div>
+          <p style="font-size: 13px; color: #585858; margin: 6px 0 0;">Procedimento de Alocação</p>
+        </div>
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 20px; padding: 22px;">
+          <div style="font-size: 17px; font-weight: 900; letter-spacing: -0.01em;">23/09/2026</div>
+          <p style="font-size: 13px; color: #585858; margin: 6px 0 0;">Data de Liquidação</p>
+        </div>
+      </div>
+      <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 18px 0 0;">Fonte: “Cronograma indicativo” dos documentos da Oferta. As datas são indicativas e estão sujeitas a alterações, atrasos e antecipações.</p>
+    </div>
+  </section>
+
+  <section id="faq" data-screen-label="09 Riscos e FAQ" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(24px, 3vw, 44px); align-items: start;">
+      <div style="min-width: 0;">
+        <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 18px;">Riscos e informações</span>
+        <h2 style="font-size: clamp(26px, 3vw, 42px); line-height: 1.07; letter-spacing: -0.03em; font-weight: 900; margin: 0 0 16px;">O que você precisa ler antes de investir</h2>
+        <p style="font-size: 15.5px; line-height: 1.65; color: #374D61; margin: 0 0 20px;">Resumo dos fatores de risco e das informações obrigatórias da Oferta. A descrição não é exaustiva.</p>
+        <p style="font-size: 13px; font-weight: 800; line-height: 1.5; margin: 0; color: #1D2F41;">LEIA O PROSPECTO, A LÂMINA E O REGULAMENTO DO FUNDO ANTES DE ACEITAR A OFERTA, EM ESPECIAL A SEÇÃO “FATORES DE RISCO”.</p>
+      </div>
+
+      <div style="min-width: 0; display: grid; gap: 12px;">
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 20px; overflow: hidden;">
+          <button type="button" onClick="{{ t1 }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; background: transparent; border: 0; padding: 20px 22px; cursor: pointer; text-align: left; font-family: Archivo, system-ui, sans-serif; font-size: 15.5px; font-weight: 800; color: #1D2F41;">Quais são os principais fatores de risco?
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 999px; background: rgba(74,166,179,0.18); color: #2f7f8a; flex-shrink: 0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </button>
+          <sc-if value="{{ open1 }}" hint-placeholder-val="{{ true }}">
+            <div style="padding: 0 22px 22px;">
+              <p style="font-size: 14px; line-height: 1.65; color: #585858; margin: 0;">Risco de crédito; riscos macroeconômicos relevantes; riscos relativos ao setor imobiliário; risco de execução das garantias atreladas aos CRI; riscos relacionados ao investimento em valores mobiliários; riscos relacionados aos créditos que lastreiam os CRI; risco de mercado dos Ativos da Classe; risco de mercado das cotas, inclusive negociação em bolsa por valor inferior ao patrimonial; risco relativo ao Estudo de Viabilidade, cujas premissas e projeções podem não se confirmar; riscos tributários. A descrição não é exaustiva — os fatores estão descritos, em ordem decrescente de relevância, na seção “Fatores de Risco” do Prospecto.</p>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 20px; overflow: hidden;">
+          <button type="button" onClick="{{ t2 }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; background: transparent; border: 0; padding: 20px 22px; cursor: pointer; text-align: left; font-family: Archivo, system-ui, sans-serif; font-size: 15.5px; font-weight: 800; color: #1D2F41;">A rentabilidade apresentada é garantida?
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 999px; background: rgba(74,166,179,0.18); color: #2f7f8a; flex-shrink: 0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </button>
+          <sc-if value="{{ open2 }}" hint-placeholder-val="{{ true }}">
+            <div style="padding: 0 22px 22px;">
+              <p style="font-size: 14px; line-height: 1.65; color: #585858; margin: 0;">Não. A rentabilidade passada não representa garantia de rentabilidade futura e a expectativa de rentabilidade não representa promessa nem garantia. A rentabilidade divulgada não é líquida de impostos, excetuados os rendimentos distribuídos para pessoas físicas. O fundo não conta com garantia da gestora, do administrador, de qualquer mecanismo de seguro ou do Fundo Garantidor de Créditos (FGC).</p>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 20px; overflow: hidden;">
+          <button type="button" onClick="{{ t3 }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; background: transparent; border: 0; padding: 20px 22px; cursor: pointer; text-align: left; font-family: Archivo, system-ui, sans-serif; font-size: 15.5px; font-weight: 800; color: #1D2F41;">Como funcionam as projeções do Estudo de Viabilidade?
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 999px; background: rgba(74,166,179,0.18); color: #2f7f8a; flex-shrink: 0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </button>
+          <sc-if value="{{ open3 }}" hint-placeholder-val="{{ true }}">
+            <div style="padding: 0 22px 22px;">
+              <p style="font-size: 14px; line-height: 1.65; color: #585858; margin: 0;">São simulações elaboradas pela própria gestora com base na carteira atual, sem depender de captação de recursos novos. AS INFORMAÇÕES PRESENTES NESTE MATERIAL SÃO BASEADAS EM SIMULAÇÕES E OS RESULTADOS REAIS PODERÃO SER SIGNIFICATIVAMENTE DIFERENTES. As premissas do Estudo de Viabilidade podem não se confirmar.</p>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 20px; overflow: hidden;">
+          <button type="button" onClick="{{ t4 }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px; background: transparent; border: 0; padding: 20px 22px; cursor: pointer; text-align: left; font-family: Archivo, system-ui, sans-serif; font-size: 15.5px; font-weight: 800; color: #1D2F41;">O que é este material e onde estão os documentos?
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 999px; background: rgba(74,166,179,0.18); color: #2f7f8a; flex-shrink: 0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </button>
+          <sc-if value="{{ open4 }}" hint-placeholder-val="{{ true }}">
+            <div style="padding: 0 22px 22px;">
+              <p style="font-size: 14px; line-height: 1.65; color: #585858; margin: 0;">Este documento é um material publicitário e contém apenas um resumo das informações constantes dos documentos da Oferta, com os quais não se confunde. Material elaborado pela Éxes Gestora de Recursos Ltda.; é vedada a reprodução, a distribuição ou a divulgação, total ou parcial, sem consentimento prévio e por escrito. Os documentos estão disponíveis nas páginas da Administradora, da Gestora, do Coordenador Líder, da B3, do Fundos.NET e da CVM — veja a lista abaixo.</p>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="10 CTA final" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; background: #1D2F41; border-radius: clamp(24px, 3vw, 40px); padding: clamp(32px, 5vw, 64px); color: #ffffff; text-align: center; position: relative; overflow: hidden; box-shadow: 0 30px 70px rgba(29,47,65,0.26);">
+      <div style="position: absolute; bottom: -160px; left: 50%; width: 520px; height: 420px; transform: translateX(-50%); border-radius: 999px; background: radial-gradient(circle, rgba(74,166,179,0.28), rgba(74,166,179,0) 70%); pointer-events: none;"></div>
+      <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--exes-accent, #4AA6B3); background: rgba(74,166,179,0.14); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 20px;">Período de aquisição até 16/09/2026</span>
+      <h2 style="font-size: clamp(26px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 900; margin: 0 auto 16px; max-width: 26ch; text-wrap: pretty;">Entre na oferta pagando menos do que a cota vale</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #B2B3B4; margin: 0 auto 28px; max-width: 54ch;">Rendimentos mensais isentos de IR para pessoa física, carteira de crédito imobiliário estruturado com garantias reais.</p>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 10px; background: var(--exes-accent, #4AA6B3); color: #10222f; font-size: 15.5px; font-weight: 800; padding: 18px 30px; border-radius: 999px; text-decoration: none; box-shadow: 0 16px 36px rgba(74,166,179,0.4);" style-hover="background: #3d8f9b;">{{ ctaLabel }}
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
+      </a>
+      <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 24px auto 0; max-width: 70ch;">Material publicitário. A rentabilidade passada não representa garantia de rentabilidade futura. Leia o Prospecto, a Lâmina e o Regulamento do fundo antes de aceitar a oferta, em especial a seção “Fatores de Risco”.</p>
+    </div>
+  </section>
+
+  <section id="documentos" data-screen-label="11 Documentos" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 28px; padding: clamp(26px, 4vw, 44px);">
+      <h2 style="font-size: clamp(20px, 2.2vw, 28px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 14px;">Onde encontrar os documentos da Oferta</h2>
+      <p style="font-size: 14px; line-height: 1.65; color: #374D61; margin: 0 0 22px; max-width: 78ch;">Os Investidores poderão encontrar o Prospecto Definitivo, os anúncios e comunicados da Oferta e quaisquer outras informações referentes à Oferta nas páginas da Administradora, da Gestora, do Coordenador Líder, da B3, do Fundos.NET e da CVM:</p>
+      <div style="display: grid; gap: 10px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; align-items: center; background: #F3F2F2; border-radius: 16px; padding: 14px 18px;">
+          <span style="font-size: 13.5px; font-weight: 700;">Coordenador Líder e Administrador</span>
+          <a href="https://www.btgpactual.com" style="font-size: 13.5px;">BTG Pactual Serviços Financeiros S.A. DTVM</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; align-items: center; background: #F3F2F2; border-radius: 16px; padding: 14px 18px;">
+          <span style="font-size: 13.5px; font-weight: 700;">Gestor</span>
+          <a href="https://www.exes.com.br" style="font-size: 13.5px;">Éxes Gestora de Recursos Ltda.</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; align-items: center; background: #F3F2F2; border-radius: 16px; padding: 14px 18px;">
+          <span style="font-size: 13.5px; font-weight: 700;">Assessor Legal</span>
+          <span style="font-size: 13.5px; color: #585858;">PMK Advogados</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; align-items: center; background: #F3F2F2; border-radius: 16px; padding: 14px 18px;">
+          <span style="font-size: 13.5px; font-weight: 700;">B3 e Fundos.NET</span>
+          <a href="https://www.b3.com.br" style="font-size: 13.5px;">b3.com.br · Fundos.NET</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; align-items: center; background: #F3F2F2; border-radius: 16px; padding: 14px 18px;">
+          <span style="font-size: 13.5px; font-weight: 700;">CVM</span>
+          <a href="https://www.gov.br/cvm/pt-br" style="font-size: 13.5px;">gov.br/cvm/pt-br</a>
+        </div>
+      </div>
+      <p style="font-size: 11px; line-height: 1.7; color: #585858; margin: 24px 0 0;">Este documento é um material publicitário e contém apenas um resumo das informações constantes dos documentos da Oferta, com os quais não se confunde. Material elaborado pela Éxes Gestora de Recursos Ltda. É vedada a reprodução, a distribuição ou a divulgação, total ou parcial, sem consentimento prévio e por escrito da Éxes Gestora de Recursos Ltda. A expectativa de rentabilidade não representa promessa nem garantia de rentabilidade. A rentabilidade passada não representa garantia de rentabilidade futura. A rentabilidade divulgada não é líquida de impostos, excetuados os rendimentos distribuídos para pessoas físicas. O fundo não conta com garantia da gestora, do administrador, de qualquer mecanismo de seguro ou do Fundo Garantidor de Créditos (FGC). Recomenda-se a leitura do Regulamento e do Prospecto, com atenção à seção de Fatores de Risco, antes de investir.</p>
+    </div>
+  </section>
+
+  <footer data-screen-label="12 Rodapé" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) clamp(24px, 3vw, 40px);">
+    <div style="max-width: 1240px; margin: 0 auto; background: #1D2F41; color: #ffffff; border-radius: clamp(24px, 3vw, 36px); padding: clamp(28px, 4vw, 52px);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: clamp(24px, 3vw, 44px); align-items: start;">
+        <div style="min-width: 0;">
+          <svg width="118" height="37" viewBox="0 0 112 35" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Éxes">
+            <path d="M14.8794 8.69299C18.671 8.39067 23.2091 9.5547 25.3804 12.8727C27.1265 15.5411 27.3076 19.4559 26.687 22.4733C24.3067 22.521 21.7889 22.481 19.3999 22.4811H5.46826C5.65109 27.2159 8.88239 29.6039 13.3901 29.6061C15.7172 29.6071 17.9606 29.1212 19.7505 27.5221C20.7285 26.6483 21.1005 25.3851 22.6157 25.5104C23.0691 25.5348 23.638 25.5125 24.105 25.5172C24.8915 25.515 25.6779 25.5186 26.4644 25.5289C24.8106 30.7541 20.6624 33.4226 15.3013 33.9381C11.1801 34.3342 6.64124 33.719 3.41748 30.8864C1.40536 29.1344 0.184968 26.6449 0.0317364 23.9811C-0.419057 16.782 3.96757 10.9364 10.9575 9.22522C12.3665 8.88027 13.4237 8.78416 14.8794 8.69299ZM16.3071 13.1393C15.7535 13.066 14.9307 13.0337 14.3813 13.1002C11.6587 13.277 9.64894 14.0814 7.75928 16.151C7.10952 16.8627 6.45397 17.9691 6.17431 18.8824L13.5815 18.8854H21.6245C21.5865 15.5368 19.684 13.5869 16.3071 13.1393Z" fill="#ffffff"></path>
+            <path d="M75.1613 8.69242C76.1678 8.65495 77.176 8.69245 78.177 8.80278C83.4284 9.35247 86.8994 12.5518 87.2141 17.8623C87.3132 19.5378 87.1651 20.8011 86.9895 22.4678C84.867 22.5276 82.5478 22.4816 80.4143 22.4815L65.757 22.4883C65.8478 27.2775 69.2794 29.624 73.7297 29.6036C76.9853 29.5885 79.4045 28.6668 81.4309 25.962C81.8857 25.3555 83.6777 25.5104 84.4113 25.5176L86.6984 25.5205C86.2913 27.1083 85.513 28.5765 84.427 29.8038C79.7326 35.1671 68.9736 35.4431 63.6701 30.876C58.6992 26.5953 59.5526 18.3098 63.6291 13.7305C66.7697 10.2024 70.5931 8.98185 75.1613 8.69242ZM74.9231 13.0801C74.8289 13.0829 74.7343 13.0898 74.6408 13.1006C70.6597 13.3645 67.9626 15.1941 66.4113 18.8809L73.759 18.8858L81.8723 18.8868C81.8276 17.2173 81.6184 16.0133 80.3342 14.7911C78.832 13.3616 76.9144 13.0277 74.9231 13.0801Z" fill="#ffffff"></path>
+            <path d="M54.6722 8.69193C54.9603 8.6457 55.4049 8.70277 55.7033 8.72322C57.713 8.86067 59.7847 10.5579 59.5367 12.7416C59.4363 13.6111 58.9962 14.4058 58.3136 14.9531C56.9655 16.0224 54.7172 16.0445 53.4912 14.7684C53.3279 14.5983 53.1662 14.3903 53.0199 14.205C50.7149 15.9408 49.1456 18.4739 47.4339 20.8203C47.7002 21.4926 48.0337 22.1961 48.3277 22.8561C49.0586 24.4971 49.7965 26.2046 50.5622 27.821C50.7913 28.3049 51.4562 29.5592 51.9147 29.6478C53.1836 29.8931 54.2314 26.5014 54.4422 25.789C55.1087 26.0413 56.9808 26.3119 57.2165 26.9722C57.4712 27.6856 56.7396 29.2496 56.4219 29.9399C55.7093 31.4872 54.5038 33.0071 52.8392 33.5638C51.5409 33.9978 49.822 33.9533 48.58 33.3425C46.442 32.2912 45.5213 29.9024 44.6985 27.8218C44.3831 27.0243 44.013 26.1881 43.732 25.3858C41.7032 28.0102 40.6354 30.4807 37.7204 32.4905C35.4037 34.1012 31.192 34.6535 29.341 32.0956C28.8064 31.3612 28.5923 30.4413 28.7478 29.5463C29.1206 27.312 31.9176 26.0874 33.8608 27.1794C34.4882 27.5319 34.8096 27.8847 35.2195 28.4652C37.2061 27.2812 39.9235 23.288 41.4001 21.3053C40.2881 18.8 39.2341 16.0863 38.0801 13.6251L32.8161 13.6239C33.2859 12.1721 33.5484 10.3867 34.2356 9.06113C34.4727 8.60382 36.9184 8.72236 37.4299 8.72273L42.0153 8.72622C42.8802 10.8592 43.65 13.0448 44.5019 15.1843C44.71 15.7068 44.8838 16.2221 45.1375 16.727C47.4254 13.1916 50.1084 9.11439 54.6722 8.69193Z" fill="#4AA6B3"></path>
+            <path d="M102.546 8.69331C102.953 8.67286 103.36 8.67078 103.766 8.68725C106.153 8.77119 108.64 9.28225 110.321 11.1214C111.899 12.8477 112.062 14.6544 111.984 16.8301C110.808 16.8354 109.61 16.8629 108.428 16.8447C106.751 16.8572 107.093 15.1193 106.209 14.2264C104.591 12.5907 100.327 12.8448 98.6691 14.3001C97.6932 15.1566 97.3718 17.1232 98.6397 17.8798C102.975 20.4684 113.076 19.7763 111.654 27.3912C110.56 33.2504 104.43 34.1836 99.5274 34.0063C96.4933 33.7489 93.5162 32.9268 91.6123 30.3291C90.6089 28.9598 90.121 27.2108 90.3891 25.5213C91.2731 25.5148 95.0939 25.2282 95.4024 26.0497C96.6384 29.3379 99.2543 29.7933 102.405 29.6027C104.599 29.4699 106.309 28.4883 106.255 26.0766C106.063 23.7749 101.92 23.56 100.187 23.0353C97.8426 22.3251 95.2151 21.7707 93.4721 19.9306C91.4941 17.8421 92.1259 14.1453 93.9325 12.1699C96.205 9.65763 99.2831 8.91863 102.546 8.69331Z" fill="#ffffff"></path>
+            <path d="M20.1264 0C21.0276 0.0408811 21.7618 0.170835 22.4177 0.854217C22.9034 1.35522 23.1653 2.03168 23.1436 2.72917C23.1235 3.46554 22.8084 4.16304 22.2693 4.66503C20.9663 5.86893 18.7392 5.56262 17.0831 5.50311L12.1581 5.30657L8.74246 5.15724C8.70572 4.8159 8.67193 4.47419 8.64114 4.13224C8.56235 3.18837 8.66752 2.92601 9.61459 2.64963C10.9906 2.30438 12.4257 1.80954 13.8043 1.50591C15.7714 1.07265 18.1334 0.117874 20.1264 0Z" fill="#ffffff"></path>
+          </svg>
+          <p style="font-size: 13px; line-height: 1.6; color: #B2B3B4; max-width: 34ch; margin: 18px 0 16px;">Gestora de fundos de investimentos de crédito privado. Fale com a Éxes pelos nossos canais:</p>
+          <div style="display: flex; gap: 8px;">
+            <a href="#" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); color: #ffffff;" style-hover="background: rgba(255,255,255,0.10);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-13h4v1.5A6 6 0 0116 8z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); color: #ffffff;" style-hover="background: rgba(255,255,255,0.10);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
+            </a>
+            <a href="#" aria-label="Site" style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); color: #ffffff;" style-hover="background: rgba(255,255,255,0.10);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div style="min-width: 0;">
+          <h4 style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--exes-accent, #4AA6B3); margin: 0 0 16px;">A gestora</h4>
+          <div style="display: grid; gap: 10px;">
+            <a href="#gestora" style="font-size: 13.5px; color: #B2B3B4; text-decoration: none;" style-hover="color: #ffffff;">Sobre a Éxes</a>
+            <a href="#" style="font-size: 13.5px; color: #B2B3B4; text-decoration: none;" style-hover="color: #ffffff;">Fundos sob gestão</a>
+            <a href="#" style="font-size: 13.5px; color: #B2B3B4; text-decoration: none;" style-hover="color: #ffffff;">Contato</a>
+          </div>
+        </div>
+        <div style="min-width: 0;">
+          <h4 style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--exes-accent, #4AA6B3); margin: 0 0 16px;">Transparência</h4>
+          <div style="display: grid; gap: 10px;">
+            <a href="#documentos" style="font-size: 13.5px; color: #B2B3B4; text-decoration: none;" style-hover="color: #ffffff;">Prospecto e Lâmina</a>
+            <a href="#documentos" style="font-size: 13.5px; color: #B2B3B4; text-decoration: none;" style-hover="color: #ffffff;">Regulamento</a>
+            <a href="#" style="font-size: 13.5px; color: #B2B3B4; text-decoration: none;" style-hover="color: #ffffff;">Fatos relevantes</a>
+          </div>
+        </div>
+        <div style="min-width: 0;">
+          <h4 style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--exes-accent, #4AA6B3); margin: 0 0 16px;">Recursos</h4>
+          <div style="display: grid; gap: 10px;">
+            <a href="#" style="font-size: 13.5px; color: #B2B3B4; text-decoration: none;" style-hover="color: #ffffff;">Relatórios gerenciais</a>
+            <a href="#faq" style="font-size: 13.5px; color: #B2B3B4; text-decoration: none;" style-hover="color: #ffffff;">Perguntas frequentes</a>
+            <a href="#" style="font-size: 13.5px; color: #B2B3B4; text-decoration: none;" style-hover="color: #ffffff;">Fundos.NET</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.14); margin-top: 32px; padding-top: 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: center;">
+        <p style="font-size: 14px; font-weight: 700; line-height: 1.55; color: #ffffff; margin: 0; max-width: 48ch;">Receba os relatórios e comunicados do EXES11 por e-mail, com as atualizações da oferta.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <input type="email" placeholder="Seu e-mail" style="flex: 1 1 190px; min-width: 0; font-family: Archivo, system-ui, sans-serif; font-size: 14px; color: #ffffff; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 999px; padding: 14px 18px;">
+          <button type="button" style="font-family: Archivo, system-ui, sans-serif; font-size: 14px; font-weight: 800; color: #10222f; background: var(--exes-accent, #4AA6B3); border: 0; border-radius: 999px; padding: 14px 22px; cursor: pointer;" style-hover="background: #3d8f9b;">Quero receber</button>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.14); margin-top: 26px; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;">
+        <span style="font-size: 11px; color: #787D81;">© 2026 Éxes Gestora de Recursos Ltda. Todos os direitos reservados.</span>
+        <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #787D81;">Material publicitário</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#4AA6B3&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#4AA6B3&quot;,&quot;#374D61&quot;,&quot;#1D2F41&quot;],&quot;section&quot;:&quot;Marca&quot;},&quot;ctaLabel&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Quero investir no EXES11&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
+class Component extends DCLogic {
+  state = { scenario: "base", open: { 1: true, 2: false, 3: false, 4: false }, gx: 50, gy: 50, gHover: false };
+
+  tab(active) {
+    return "flex: 1; font-family: Archivo, system-ui, sans-serif; font-size: 13.5px; font-weight: 800; border: 0; border-radius: 999px; padding: 12px 14px; cursor: pointer; transition: background 140ms ease;" +
+      (active
+        ? " background: #1D2F41; color: #ffffff;"
+        : " background: transparent; color: #585858;");
+  }
+
+  toggle(n) {
+    return () => this.setState(s => ({ open: Object.assign({}, s.open, { [n]: !s.open[n] }) }));
+  }
+
+  renderVals() {
+    const base = this.state.scenario === "base";
+    return {
+      accent: this.props.accent ?? "#4AA6B3",
+      onGlassMove: (e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        this.setState({
+          gx: ((e.clientX - r.left) / r.width) * 100,
+          gy: ((e.clientY - r.top) / r.height) * 100,
+          gHover: true
+        });
+      },
+      onGlassLeave: () => this.setState({ gHover: false, gx: 50, gy: 50 }),
+      menuOpen: !!this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      glassSheen: "position: absolute; inset: 0; border-radius: 999px; pointer-events: none; z-index: 2;" +
+        " opacity: " + (this.state.gHover ? 1 : 0) + ";" +
+        " transition: opacity 300ms ease, background 120ms linear;" +
+        " background: radial-gradient(200px circle at " + this.state.gx.toFixed(1) + "% " + this.state.gy.toFixed(1) +
+        "%, rgba(255,255,255,0.55), rgba(74,166,179,0.16) 45%, rgba(255,255,255,0) 70%);",
+      ctaLabel: this.props.ctaLabel ?? "Quero investir no EXES11",
+      pickBase: () => this.setState({ scenario: "base" }),
+      pickCons: () => this.setState({ scenario: "cons" }),
+      baseTabStyle: this.tab(base),
+      consTabStyle: this.tab(!base),
+      scenarioNote: base
+        ? "Cenário base: considera a carteira atual, sem depender de captação de recursos novos."
+        : "Cenário conservador: considera inadimplência de 3,22% da carteira e execução de garantias.",
+      metricALabel: base ? "TIR projetada — 5 anos" : "Retorno total projetado",
+      metricAValue: base ? "14,74% a.a." : "14,55% a.a.",
+      metricANote: base ? "Equivalente a CDI + 3,40%." : "Equivalente a CDI + 3,23%.",
+      metricBLabel: base ? "Dividend yield — 1º ano" : "Impacto na distribuição",
+      metricBValue: base ? "15,81%" : "R$ 0,01",
+      metricBNote: base
+        ? "Ou 18,60% se comparado a uma aplicação tributada."
+        : "É a queda por cota na distribuição do primeiro ano, mesmo com as perdas simuladas.",
+      open1: !!this.state.open[1],
+      open2: !!this.state.open[2],
+      open3: !!this.state.open[3],
+      open4: !!this.state.open[4],
+      t1: this.toggle(1),
+      t2: this.toggle(2),
+      t3: this.toggle(3),
+      t4: this.toggle(4)
+    };
+  }
+}
+</script>
+</body>
+</html>
