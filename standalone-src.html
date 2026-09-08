@@ -43,14 +43,11 @@
   [data-r="adbar"] {
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: #F5A524;
+    background: #E8940C;
     color: #ffffff;
     text-align: center;
-    font-size: 10.5px;
-    font-weight: 800;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    padding: 7px 12px;
+    padding: 8px 14px;
+    line-height: 1.35;
     z-index: 100;
   }
 
@@ -66,6 +63,26 @@
     [data-mq-track] > [data-mq-group][aria-hidden="true"] { display: flex; }
     [data-mq-track] [data-mq-group] > * { flex: 0 0 auto; width: var(--mq-w, 230px); box-sizing: border-box; margin: 4px 0; }
   }
+
+  /* carrossel arrastável (Condições da Oferta / Fatores de risco) */
+  [data-drag] {
+    display: flex !important;
+    grid-template-columns: none !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px !important;
+    padding-bottom: 12px;
+    cursor: grab;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120,130,140,0.45) transparent;
+  }
+  [data-drag]::-webkit-scrollbar { height: 6px; }
+  [data-drag]::-webkit-scrollbar-thumb { background: rgba(120,130,140,0.4); border-radius: 999px; }
+  [data-drag].is-dragging { cursor: grabbing; }
+  [data-drag].is-dragging * { pointer-events: none; user-select: none; }
+  [data-drag] > * { flex: 0 0 clamp(232px, 74vw, 288px); }
+  @media (min-width: 900px) { [data-drag] > * { flex-basis: 280px; } }
 
   @media (min-width: 1024px) {
     [data-r="burger"] { display: none !important; }
@@ -97,9 +114,12 @@
 </style>
 </helmet>
 
-<div style="--exes-accent: {{ accent }}; font-family: Archivo, system-ui, sans-serif; color: #1D2F41; background: #F3F2F2; width: 100%; max-width: 100%; padding-bottom: 1px; padding-top: 30px;">
+<div style="--exes-accent: {{ accent }}; font-family: Archivo, system-ui, sans-serif; color: #1D2F41; background: #F3F2F2; width: 100%; max-width: 100%; padding-bottom: 1px; padding-top: 58px;">
 
-  <div data-r="adbar">Material publicitário</div>
+  <div data-r="adbar">
+    <span style="display:block; font-size:12px; font-weight:800; letter-spacing:0.22em;">MATERIAL PUBLICITÁRIO</span>
+    <span style="display:block; font-size:10.5px; font-weight:600; letter-spacing:0.02em; text-transform:none; opacity:0.96; margin-top:2px;">Leia o Prospecto, a Lâmina e o Regulamento do Fundo antes de aceitar a Oferta, em especial a seção Fatores de Risco.</span>
+  </div>
 
   <svg width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
     <defs>
@@ -121,7 +141,7 @@
     </defs>
   </svg>
 
-  <div data-r="navbar" style="position: sticky; top: 42px; z-index: 40; padding: 12px clamp(12px, 3vw, 28px) 0;">
+  <div data-r="navbar" style="position: sticky; top: 66px; z-index: 40; padding: 12px clamp(12px, 3vw, 28px) 0;">
     <nav style="position: relative; max-width: 1240px; margin: 0 auto; background: linear-gradient(135deg, rgba(255,255,255,0.60), rgba(255,255,255,0.30) 46%, rgba(74,166,179,0.14)); backdrop-filter: blur(20px) saturate(180%) brightness(1.06); -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.06); border: 1px solid rgba(255,255,255,0.65); border-radius: 999px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.92), inset 0 -1px 2px rgba(255,255,255,0.45), inset 0 0 22px rgba(255,255,255,0.30), 0 14px 38px rgba(29,47,65,0.16), 0 2px 6px rgba(29,47,65,0.08); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 22px; isolation: isolate; overflow: hidden; transition: transform 260ms cubic-bezier(0.2, 0.9, 0.25, 1), box-shadow 260ms ease;" onMouseMove="{{ onGlassMove }}" onMouseLeave="{{ onGlassLeave }}" style-hover="transform: scale(1.008);" style-before="content: ''; position: absolute; inset: 0; border-radius: 999px; padding: 1px; background: linear-gradient(120deg, rgba(255,255,255,0.95), rgba(255,255,255,0) 34%, rgba(255,255,255,0) 66%, rgba(255,255,255,0.7)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; pointer-events: none; z-index: 2;" style-after="content: ''; position: absolute; left: 6%; right: 6%; top: 2px; height: 42%; border-radius: 999px; background: linear-gradient(to bottom, rgba(255,255,255,0.55), rgba(255,255,255,0)); pointer-events: none; z-index: 1;">
       <div style="position: absolute; inset: 0; border-radius: 999px; pointer-events: none; backdrop-filter: blur(2px) url(#exesLiquid) saturate(140%); -webkit-backdrop-filter: blur(2px) saturate(140%); z-index: 0;"></div>
       <div style="{{ glassSheen }}"></div>
@@ -140,7 +160,8 @@
         <a href="#numeros" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Números</a>
         <a href="#projecao" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Projeção</a>
         <a href="#gestora" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Gestora</a>
-        <a href="#faq" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Riscos</a>
+        <a href="#riscos" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Riscos</a>
+        <a href="#termos" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Termos</a>
         <a href="#documentos" style="font-size: 13.5px; font-weight: 600; color: #374D61; text-decoration: none; padding: 9px 12px; border-radius: 999px; white-space: nowrap;" style-hover="background: rgba(74,166,179,0.14); color: #1D2F41;">Documentos</a>
       </div>
       <button type="button" data-r="burger" onClick="{{ toggleMenu }}" aria-label="Abrir menu" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,0.75); border: 1px solid rgba(29,47,65,0.14); color: #1D2F41; cursor: pointer; flex-shrink: 0; position: relative; z-index: 3; margin-left: auto; box-shadow: 0 4px 12px rgba(29,47,65,0.12);" style-hover="background: #ffffff;">
@@ -157,7 +178,8 @@
         <a href="#projecao" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Projeção</a>
         <a href="#gestora" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Gestora</a>
         <a href="#cronograma" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Cronograma</a>
-        <a href="#faq" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Riscos</a>
+        <a href="#riscos" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Fatores de risco</a>
+        <a href="#termos" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Termos da oferta</a>
         <a href="#documentos" onClick="{{ closeMenu }}" style="font-size: 15px; font-weight: 700; color: #1D2F41; text-decoration: none; padding: 14px 16px; border-radius: 16px;" style-hover="background: rgba(74,166,179,0.14);">Documentos da oferta</a>
         <a href="#" onClick="{{ closeMenu }}" data-cta style="margin-top: 6px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 800; color: #10222f; background: var(--exes-accent, #4AA6B3); text-decoration: none; padding: 15px 16px; border-radius: 16px; box-shadow: 0 8px 20px rgba(74,166,179,0.35);" style-hover="background: #3d8f9b;">{{ ctaLabel }}
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
@@ -177,16 +199,16 @@
             <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 999px; background: var(--exes-accent, #4AA6B3); color: #10222f;">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
             </span>
-            <span style="font-size: 12.5px; font-weight: 700; color: #ffffff;">2º lugar entre 87 FIIs de recebíveis · jun/2026</span>
+            <span style="font-size: 12.5px; font-weight: 700; color: #ffffff;">2º em DY patrimonial · 87 FIIs de recebíveis · Com dinheiro, jun/2026</span>
           </div>
-          <h1 style="font-size: clamp(34px, 4.4vw, 60px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 900; margin: 0 0 20px; text-wrap: pretty;">Um dos FIIs com maior DY patrimonial da bolsa está em oferta, <span style="color: var(--exes-accent, #4AA6B3);">com desconto</span></h1>
-          <p style="font-size: clamp(15.5px, 1.3vw, 18px); line-height: 1.6; color: #B2B3B4; max-width: 48ch; margin: 0 0 30px;">O EXES11 ocupa o 2º lugar em rendimento patrimonial entre 87 fundos de recebíveis, e agora você pode entrar pagando menos do que a cota vale.</p>
+          <h1 style="font-size: clamp(32px, 4vw, 54px); line-height: 1.06; letter-spacing: -0.03em; font-weight: 900; margin: 0 0 18px; text-wrap: pretty;">2º em dividend yield patrimonial entre 87 FIIs de recebíveis <span style="color: var(--exes-accent, #4AA6B3);">(jun/2026)</span></h1>
+          <p style="font-size: clamp(15.5px, 1.3vw, 18px); line-height: 1.6; color: #B2B3B4; max-width: 52ch; margin: 0 0 28px;">1ª oferta pública de distribuição secundária de cotas do EXES11. Preço da oferta de R$ 9,50 por cota — 1,82% abaixo da cota patrimonial de R$ 9,68 em 31/07/2026. Ranking Com dinheiro de FIIs de recebíveis, não da bolsa como um todo.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
             <a href="#" data-cta style="display: inline-flex; align-items: center; gap: 10px; background: var(--exes-accent, #4AA6B3); color: #10222f; font-size: 15px; font-weight: 800; padding: 17px 26px; border-radius: 999px; text-decoration: none; box-shadow: 0 14px 32px rgba(74,166,179,0.38);" style-hover="background: #3d8f9b;">{{ ctaLabel }}
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
             </a>
           </div>
-          <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 24px 0 0; max-width: 54ch;">Leia o Prospecto, a Lâmina e o Regulamento do Fundo antes de aceitar a Oferta, em especial a seção “Fatores de Risco”.</p>
+          <p style="font-size: 12.5px; font-weight: 600; line-height: 1.55; color: #d4dadd; margin: 22px 0 0; max-width: 60ch; border-left: 3px solid var(--exes-accent, #4AA6B3); padding-left: 14px;">Leia o Prospecto, a Lâmina e o Regulamento do Fundo antes de aceitar a Oferta, em especial a seção “Fatores de Risco”. O investimento nas cotas do Fundo é um investimento de risco.</p>
         </div>
 
         <div data-r="herophoto" style="position: relative; min-width: 0; min-height: clamp(330px, 40vw, 470px);">
@@ -253,7 +275,7 @@
           </div>
         </div>
       </div>
-        <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 18px 0 0;">Fonte do ranking e do DY patrimonial: Comdinheiro, universo de 87 FIIs de recebíveis, data-base junho/2026; apuração da Éxes Gestora de Recursos. A rentabilidade passada não representa garantia de rentabilidade futura.</p>
+        <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 18px 0 0;">Fonte do ranking e do DY patrimonial: Com dinheiro, universo de 87 FIIs de recebíveis, data-base junho/2026; apuração da Éxes Gestora de Recursos. A rentabilidade passada não representa garantia de rentabilidade futura.</p>
       </div>
     </div>
   </section>
@@ -266,7 +288,7 @@
         <span>Garantias reais</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
         <span>Monitoramento independente</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
         <span>13 meses seguidos no Top 10</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
-        <span>R$ 136,5 mi de patrimônio líquido</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>R$ 136,5 mi de patrimônio líquido — 31/07/2026</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
         <span>Rendimentos isentos de IR para PF</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
       </div>
       <div style="display: flex; align-items: center; gap: 28px; padding-right: 28px; font-size: 13.5px; font-weight: 700; color: #374D61; white-space: nowrap;" aria-hidden="true">
@@ -275,7 +297,7 @@
         <span>Garantias reais</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
         <span>Monitoramento independente</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
         <span>13 meses seguidos no Top 10</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
-        <span>R$ 136,5 mi de patrimônio líquido</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
+        <span>R$ 136,5 mi de patrimônio líquido — 31/07/2026</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
         <span>Rendimentos isentos de IR para PF</span><span style="color: var(--exes-accent, #4AA6B3);">•</span>
       </div>
     </div>
@@ -424,9 +446,9 @@
     <div style="max-width: 1240px; margin: 0 auto; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 28px; padding: clamp(26px, 4vw, 44px); box-shadow: 0 8px 24px rgba(29,47,65,0.06);">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(24px, 3vw, 40px); align-items: center;">
         <div style="min-width: 0;">
-          <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 16px;">Carteira detida</span>
-          <h2 style="font-size: clamp(22px, 2.4vw, 32px); line-height: 1.12; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 12px;">Empresas que o EXES11 ajuda a financiar</h2>
-          <p style="font-size: 15px; line-height: 1.6; color: #374D61; margin: 0;">O EXES11 investe em operações de crédito imobiliário que contam com garantias e coobrigações das seguintes empresas:</p>
+          <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 16px;">Garantias e contrapartes</span>
+          <h2 style="font-size: clamp(22px, 2.4vw, 32px); line-height: 1.12; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 12px;">Empresas ligadas às garantias das operações</h2>
+          <p style="font-size: 15px; line-height: 1.6; color: #374D61; margin: 0;">O EXES11 investe em CRI de crédito imobiliário estruturado. Algumas operações contam com avais, garantias ou locatários de empresas de referência — por exemplo, a Cyrela é avalista da operação EBM (rating AAA.br) e a Ânima é locatária do imóvel que lastreia a operação Duarte e Lima. A menção não implica participação dessas empresas na Oferta.</p>
         </div>
         <div style="min-width: 0; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);">
           <div style="display: flex; width: max-content; animation: exesMarquee 26s linear infinite;" style-hover="animation-play-state: paused;">
@@ -461,7 +483,7 @@
           </div>
         </div>
       </div>
-      <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 22px 0 0;">Fonte: Éxes Gestora de Recursos — “Carteira detida”, data-base 31/07/2026. Substituir os rótulos pelos logotipos aprovados. A menção às empresas se refere exclusivamente às garantias e coobrigações das operações e não implica sua participação na Oferta.</p>
+      <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 22px 0 0;">Fonte: Éxes Gestora de Recursos — “Carteira detida”, data-base 31/07/2026. A menção às empresas se refere exclusivamente a avais, garantias e locações vinculados às operações e não implica participação na Oferta nem financiamento direto do Fundo a essas empresas.</p>
     </div>
   </section>
 
@@ -629,7 +651,24 @@
     </div>
   </section>
 
-  <section id="faq" data-screen-label="09 Riscos e FAQ" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+  <section id="riscos" data-screen-label="09 Fatores de risco" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; background: #16283A; color: #ffffff; border-radius: clamp(24px, 3vw, 36px); padding: clamp(28px, 4vw, 52px);">
+      <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #F5A524; background: rgba(245,165,36,0.12); border: 1px solid rgba(245,165,36,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 18px;">Fatores de risco</span>
+      <h2 style="font-size: clamp(24px, 3vw, 40px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 900; margin: 0 0 14px;">O investimento nas cotas do Fundo é um investimento de risco</h2>
+      <p style="font-size: 15.5px; line-height: 1.6; color: #cdd4d8; margin: 0 0 26px; max-width: 70ch;">Principais fatores de risco, na ordem do Prospecto. A descrição não é exaustiva e não substitui a leitura da seção completa.</p>
+      <div data-drag style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+        <div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.12); border-radius: 18px; padding: 22px;"><h3 style="font-size: 15.5px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; color: #1D2F41;">1. Risco de crédito</h3><p style="font-size: 13.5px; line-height: 1.6; color: #585858; margin: 0;">Inadimplência ou deterioração da capacidade de pagamento dos devedores dos CRI e das operações de crédito da carteira.</p></div><div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.12); border-radius: 18px; padding: 22px;"><h3 style="font-size: 15.5px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; color: #1D2F41;">2. Risco macroeconômico</h3><p style="font-size: 13.5px; line-height: 1.6; color: #585858; margin: 0;">Juros, inflação, atividade e câmbio podem afetar o valor dos ativos, a distribuição e o preço das cotas.</p></div><div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.12); border-radius: 18px; padding: 22px;"><h3 style="font-size: 15.5px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; color: #1D2F41;">3. Risco do setor imobiliário</h3><p style="font-size: 13.5px; line-height: 1.6; color: #585858; margin: 0;">A carteira está exposta a incorporação, locação e ao ciclo do mercado imobiliário; oscilações do setor afetam garantias e recebíveis.</p></div><div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.12); border-radius: 18px; padding: 22px;"><h3 style="font-size: 15.5px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; color: #1D2F41;">4. Execução das garantias dos CRI</h3><p style="font-size: 13.5px; line-height: 1.6; color: #585858; margin: 0;">A excussão de garantias reais pode ser demorada, custosa e resultar em recuperação inferior ao valor esperado.</p></div><div style="background: #ffffff; border: 1px solid rgba(29,47,65,0.12); border-radius: 18px; padding: 22px;"><h3 style="font-size: 15.5px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 8px; color: #1D2F41;">5. Liquidez das cotas</h3><p style="font-size: 13.5px; line-height: 1.6; color: #585858; margin: 0;">O FII é um condomínio fechado, sem resgate. A saída se dá pela venda das cotas na B3, que pode ocorrer por valor inferior ao patrimonial e com baixa liquidez.</p></div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; justify-content: space-between; margin-top: 26px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 22px;">
+        <p style="font-size: 13px; font-weight: 700; line-height: 1.55; color: #ffffff; margin: 0; max-width: 60ch;">Leia o Prospecto, a Lâmina e o Regulamento do Fundo antes de aceitar a Oferta, em especial a seção “Fatores de Risco”.</p>
+        <a href="https://exes.com.br/relatorios/exes-exes11-oferta/exes11-prospecto.pdf" target="_blank" rel="noopener" data-cta style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 800; padding: 13px 20px; border-radius: 999px; text-decoration: none; white-space: nowrap;">Seção completa no Prospecto
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" data-screen-label="10 Perguntas frequentes" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
     <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(24px, 3vw, 44px); align-items: start;">
       <div style="min-width: 0;">
         <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 18px;">Riscos e informações</span>
@@ -698,7 +737,7 @@
     <div style="max-width: 1240px; margin: 0 auto; background: #1D2F41; border-radius: clamp(24px, 3vw, 40px); padding: clamp(32px, 5vw, 64px); color: #ffffff; text-align: center; position: relative; overflow: hidden; box-shadow: 0 30px 70px rgba(29,47,65,0.26);">
       <div style="position: absolute; bottom: -160px; left: 50%; width: 520px; height: 420px; transform: translateX(-50%); border-radius: 999px; background: radial-gradient(circle, rgba(74,166,179,0.28), rgba(74,166,179,0) 70%); pointer-events: none;"></div>
       <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--exes-accent, #4AA6B3); background: rgba(74,166,179,0.14); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 20px;">Período de aquisição até 16/09/2026</span>
-      <h2 style="font-size: clamp(26px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 900; margin: 0 auto 16px; max-width: 26ch; text-wrap: pretty;">Entre na oferta pagando menos do que a cota vale</h2>
+      <h2 style="font-size: clamp(26px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 900; margin: 0 auto 16px; max-width: 26ch; text-wrap: pretty;">Oferta a R$ 9,50 por cota — 1,82% abaixo da cota patrimonial</h2>
       <p style="font-size: 16px; line-height: 1.6; color: #B2B3B4; margin: 0 auto 28px; max-width: 54ch;">Rendimentos mensais isentos de IR para pessoa física, carteira de crédito imobiliário estruturado com garantias reais.</p>
       <a href="#" data-cta style="display: inline-flex; align-items: center; gap: 10px; background: var(--exes-accent, #4AA6B3); color: #10222f; font-size: 15.5px; font-weight: 800; padding: 18px 30px; border-radius: 999px; text-decoration: none; box-shadow: 0 16px 36px rgba(74,166,179,0.4);" style-hover="background: #3d8f9b;">{{ ctaLabel }}
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path></svg>
@@ -707,7 +746,19 @@
     </div>
   </section>
 
-  <section id="documentos" data-screen-label="11 Documentos" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+  <section id="termos" data-screen-label="11 Termos da oferta" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 28px; padding: clamp(26px, 4vw, 44px); box-shadow: 0 8px 24px rgba(29,47,65,0.06);">
+      <span style="display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #1D2F41; background: rgba(74,166,179,0.22); border: 1px solid rgba(74,166,179,0.45); border-radius: 999px; padding: 7px 14px; margin-bottom: 16px;">Termos da oferta</span>
+      <h2 style="font-size: clamp(24px, 2.8vw, 38px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 22px;">Condições da Oferta</h2>
+      <div data-drag style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;">
+        <div style="background: #F3F2F2; border: 1px solid rgba(29,47,65,0.10); border-radius: 16px; padding: 18px 20px;"><div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7f8a; margin-bottom: 6px;">Tipo de oferta</div><div style="font-size: 14px; line-height: 1.5; color: #1D2F41; font-weight: 600;">1ª Oferta Pública de Distribuição Secundária de Cotas do EXES11 — sem emissão de novas cotas.</div></div><div style="background: #F3F2F2; border: 1px solid rgba(29,47,65,0.10); border-radius: 16px; padding: 18px 20px;"><div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7f8a; margin-bottom: 6px;">Rito de registro</div><div style="font-size: 14px; line-height: 1.5; color: #1D2F41; font-weight: 600;">Automático, nos termos da Resolução CVM nº 160.</div></div><div style="background: #F3F2F2; border: 1px solid rgba(29,47,65,0.10); border-radius: 16px; padding: 18px 20px;"><div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7f8a; margin-bottom: 6px;">Registro da Oferta</div><div style="font-size: 14px; line-height: 1.5; color: #1D2F41; font-weight: 600;">CVM/SRE/AUT/FII/SEC/2026/005, de 02/09/2026.</div></div><div style="background: #F3F2F2; border: 1px solid rgba(29,47,65,0.10); border-radius: 16px; padding: 18px 20px;"><div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7f8a; margin-bottom: 6px;">Preço por cota</div><div style="font-size: 14px; line-height: 1.5; color: #1D2F41; font-weight: 600;">R$ 9,50.</div></div><div style="background: #F3F2F2; border: 1px solid rgba(29,47,65,0.10); border-radius: 16px; padding: 18px 20px;"><div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7f8a; margin-bottom: 6px;">Montante inicial</div><div style="font-size: 14px; line-height: 1.5; color: #1D2F41; font-weight: 600;">R$ 56.000.011,00.</div></div><div style="background: #F3F2F2; border: 1px solid rgba(29,47,65,0.10); border-radius: 16px; padding: 18px 20px;"><div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7f8a; margin-bottom: 6px;">Lote adicional</div><div style="font-size: 14px; line-height: 1.5; color: #1D2F41; font-weight: 600;">Até 25% do montante inicial.</div></div><div style="background: #F3F2F2; border: 1px solid rgba(29,47,65,0.10); border-radius: 16px; padding: 18px 20px;"><div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7f8a; margin-bottom: 6px;">Investimento mínimo</div><div style="font-size: 14px; line-height: 1.5; color: #1D2F41; font-weight: 600;">1 cota (R$ 9,50).</div></div><div style="background: #F3F2F2; border: 1px solid rgba(29,47,65,0.10); border-radius: 16px; padding: 18px 20px;"><div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7f8a; margin-bottom: 6px;">Distribuição parcial</div><div style="font-size: 14px; line-height: 1.5; color: #1D2F41; font-weight: 600;">Admitida, observado o Montante Mínimo da Oferta.</div></div><div style="background: #F3F2F2; border: 1px solid rgba(29,47,65,0.10); border-radius: 16px; padding: 18px 20px;"><div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #2f7f8a; margin-bottom: 6px;">Custos da Oferta</div><div style="font-size: 14px; line-height: 1.5; color: #1D2F41; font-weight: 600;">Integralmente suportados pelo Ofertante.</div></div>
+      </div>
+      <p style="font-size: 12px; line-height: 1.65; color: #585858; margin: 24px 0 0;">O registro da Oferta na CVM não implica, por parte da CVM, garantia da veracidade das informações prestadas ou julgamento sobre a qualidade do Fundo emissor ou das cotas a serem distribuídas. Por se tratar de Oferta submetida a rito de registro automático, os documentos da Oferta não foram objeto de análise prévia pela CVM.</p>
+      <p style="font-size: 11px; line-height: 1.6; color: #787D81; margin: 10px 0 0;">Fonte: documentos da Oferta. Leia o Prospecto, a Lâmina e o Regulamento do Fundo antes de aceitar a Oferta, em especial a seção “Fatores de Risco”.</p>
+    </div>
+  </section>
+
+  <section id="documentos" data-screen-label="12 Documentos" style="padding: clamp(48px, 6vw, 90px) clamp(16px, 4vw, 40px) 0;">
     <div style="max-width: 1240px; margin: 0 auto; background: #ffffff; border: 1px solid rgba(29,47,65,0.10); border-radius: 28px; padding: clamp(26px, 4vw, 44px);">
       <h2 style="font-size: clamp(20px, 2.2vw, 28px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 900; margin: 0 0 14px;">Onde encontrar os documentos da Oferta</h2>
       <p style="font-size: 14px; line-height: 1.65; color: #374D61; margin: 0 0 22px; max-width: 78ch;">Os Investidores poderão encontrar o Prospecto Definitivo, os anúncios e comunicados da Oferta e quaisquer outras informações referentes à Oferta nas páginas da Administradora, da Gestora, do Coordenador Líder, da B3, do Fundos.NET e da CVM:</p>
@@ -784,9 +835,12 @@
         </div>
       </div>
 
-      <div style="border-top: 1px solid rgba(255,255,255,0.14); margin-top: 26px; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: center; align-items: center;">
-        <span style="font-size: 11px; color: #787D81;">© 2026 Éxes Gestora de Recursos Ltda. Todos os direitos reservados.</span>
-        <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #787D81;">Material publicitário</span>
+      <div style="border-top: 1px solid rgba(255,255,255,0.14); margin-top: 26px; padding-top: 22px;">
+        <p style="font-size: 12.5px; font-weight: 600; line-height: 1.55; color: #c2c9cd; margin: 0 auto 16px; max-width: 74ch;">Leia o Prospecto, a Lâmina e o Regulamento do Fundo antes de aceitar a Oferta, em especial a seção “Fatores de Risco”. O investimento nas cotas do Fundo é um investimento de risco.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; align-items: center;">
+          <span style="font-size: 12px; color: #9aa3ac;">© 2026 Éxes Gestora de Recursos Ltda. Todos os direitos reservados.</span>
+          <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #E8940C;">Material publicitário</span>
+        </div>
       </div>
     </div>
   </footer>
@@ -836,11 +890,11 @@ class Component extends DCLogic {
       baseTabStyle: this.tab(base),
       consTabStyle: this.tab(!base),
       scenarioNote: base
-        ? "Cenário base: considera a carteira atual, sem depender de captação de recursos novos."
-        : "Cenário conservador: considera inadimplência de 3,22% da carteira e execução de garantias.",
+        ? "Cenário base: carteira atual, sem captação de recursos novos. A TIR considera a saída ao valor patrimonial projetado no 5º ano."
+        : "Cenário conservador: inadimplência de 3,22% da carteira de crédito, perda de 2,00%, recuperação de 98% da exposição em 24 meses e desconto de 30% na venda das garantias. Saída ao valor patrimonial projetado no 5º ano.",
       metricALabel: base ? "TIR projetada — 5 anos" : "Retorno total projetado",
       metricAValue: base ? "14,74% a.a." : "14,55% a.a.",
-      metricANote: base ? "Equivalente a CDI + 3,40%." : "Equivalente a CDI + 3,23%.",
+      metricANote: base ? "CDI + 3,40% — cenário base." : "CDI + 3,23% — cenário conservador.",
       metricBLabel: base ? "Dividend yield — 1º ano" : "Impacto na distribuição",
       metricBValue: base ? "15,81%" : "R$ 0,01",
       metricBNote: base
@@ -999,9 +1053,80 @@ html.lenis, html.lenis body { height: auto; }
     setTimeout(function () { waitFor(test, fn, tries - 1); }, 60);
   }
 
+  function setupDragScroll(root) {
+    (root || document).querySelectorAll("[data-drag]").forEach(function (el) {
+      if (el.__dragBound) return;
+      el.__dragBound = true;
+
+      // duplica os cards p/ loop contínuo sem "salto"
+      Array.prototype.slice.call(el.children).forEach(function (c) {
+        var cl = c.cloneNode(true);
+        cl.setAttribute("aria-hidden", "true");
+        el.appendChild(cl);
+      });
+
+      var down = false, startX = 0, startL = 0, moved = 0, pauseUntil = 0;
+      el.__pos = 0;
+      function half() { return el.scrollWidth / 2; }
+      function hold() { pauseUntil = Date.now() + 3500; }
+
+      el.addEventListener("pointerdown", function (e) {
+        if (e.pointerType === "touch") { hold(); return; }
+        down = true; moved = 0; startX = e.clientX; startL = el.scrollLeft;
+        try { el.setPointerCapture(e.pointerId); } catch (_) {}
+      });
+      el.addEventListener("pointermove", function (e) {
+        if (!down) return;
+        var dx = e.clientX - startX;
+        moved = Math.abs(dx);
+        if (moved > 3) el.classList.add("is-dragging");
+        el.scrollLeft = startL - dx;
+        el.__pos = el.scrollLeft;
+      });
+      function end(e) {
+        if (!down) return;
+        down = false; hold();
+        el.__pos = el.scrollLeft;
+        setTimeout(function () { el.classList.remove("is-dragging"); }, 0);
+        try { el.releasePointerCapture(e.pointerId); } catch (_) {}
+      }
+      el.addEventListener("pointerup", end);
+      el.addEventListener("pointercancel", end);
+      el.addEventListener("click", function (e) {
+        if (moved > 5) { e.preventDefault(); e.stopPropagation(); }
+      }, true);
+      el.addEventListener("wheel", function (e) {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { el.scrollLeft += e.deltaY; e.preventDefault(); }
+        el.__pos = el.scrollLeft; hold();
+      }, { passive: false });
+      el.addEventListener("touchmove", function () { el.__pos = el.scrollLeft; hold(); }, { passive: true });
+      var last = 0;
+      function tick(ts) {
+        if (!el.isConnected) return;
+        var dt = last ? Math.min(ts - last, 60) : 16; last = ts;
+        var h = half();
+        if (h > 0) {
+          var paused = down || RM || Date.now() < pauseUntil;
+          if (!paused) {
+            el.__pos += (dt / 1000) * 24;
+            if (el.__pos >= h) el.__pos -= h;
+            el.scrollLeft = el.__pos;
+          } else {
+            if (el.__pos >= h) { el.__pos -= h; el.scrollLeft = el.__pos; }
+            else if (el.__pos < 0) { el.__pos += h; el.scrollLeft = el.__pos; }
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+
   function init() {
     var root = document.querySelector("x-dc") || document.body;
     setupProgress();
+    setupDragScroll(root);
     if (RM) return;
     setupReveal(root);
     setupCharts(root);
